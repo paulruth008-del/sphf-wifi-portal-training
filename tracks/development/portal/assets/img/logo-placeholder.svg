@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" role="img" aria-labelledby="title desc">
+  <title id="title">Training logo placeholder</title>
+  <desc id="desc">A simple placeholder logo for the Wi‑Fi portal training lab.</desc>
+  <rect width="240" height="80" rx="12" fill="#0f62fe" />
+  <circle cx="40" cy="40" r="18" fill="#ffffff" />
+  <path d="M34 40a6 6 0 0 1 12 0" stroke="#0f62fe" stroke-width="4" fill="none" />
+  <text x="70" y="47" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#ffffff">SPHF Training Lab</text>
+</svg>

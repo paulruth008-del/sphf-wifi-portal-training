@@ -1,0 +1,5 @@
+member_id,display_name,membership_type,status,created_at
+DEMO-001,Alex Rivera,community-member,active,2026-01-10
+DEMO-002,Sam Okoro,guest,active,2026-01-16
+DEMO-003,Jules Carter,student,active,2026-02-03
+DEMO-004,Taylor Morgan,community-member,inactive,2026-02-21

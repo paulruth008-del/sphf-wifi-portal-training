@@ -1,0 +1,15 @@
+# Ignore local editor and OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Ignore common dependency folders
+node_modules/
+
+# Ignore logs and temp files
+*.log
+*.tmp
+*.bak

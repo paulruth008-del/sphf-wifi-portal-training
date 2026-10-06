@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Wi‑Fi Login</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h1>Community Wi‑Fi Login</h1>
+      <p>Welcome to the training portal. This page demonstrates a simplified captive portal login flow.</p>
+      <form id="login-form" action="#" method="post" novalidate>
+        <label for="member-id">Member ID</label>
+        <input id="member-id" name="member_id" type="text" placeholder="Enter demo member ID" required>
+
+        <label for="device-name">Device name</label>
+        <input id="device-name" name="device_name" type="text" placeholder="Phone, tablet, or laptop" required>
+
+        <label class="checkbox-row" for="accept-terms">
+          <input id="accept-terms" name="accept_terms" type="checkbox" required>
+          <span>I agree to the demo network terms for this training lab.</span>
+        </label>
+
+        <div id="form-message" class="message" aria-live="polite"></div>
+
+        <button type="submit">Connect</button>
+      </form>
+      <p class="note">Use fake values only. This is a training environment.</p>
+    </section>
+  </main>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
