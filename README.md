@@ -1,75 +1,104 @@
 # SPHF Wi‑Fi Portal Training Lab
 
-A simplified, multi-discipline training repository for building and understanding a community Wi‑Fi captive portal system.
+Welcome to the SPHF Wi‑Fi Portal Training Lab.
 
-## Purpose
+This repo is here to help you build a simple version of a community Wi‑Fi captive portal system.
 
-This repository is designed for classroom, workshop, and team-based learning. Instead of focusing only on “building the portal,” it helps learners explore the same project from several practical perspectives:
+The main idea is not just to read about the project, but to work on it step by step and understand how the different parts connect.
 
-- **Development** — build and style portal pages and understand the front-end flow
-- **Data** — model membership/session data and work with safe sample records
-- **Cybersecurity** — identify risks, strengthen forms, and review security controls
-- **Networking** — understand captive portal traffic flow, segmentation, and deployment assumptions
+## What is this project about?
 
-## Who this is for
+When people connect to a public or community Wi‑Fi network, they are sometimes redirected to a page before they can use the internet fully. That page is called a **captive portal**.
 
-- Students learning web, data, security, or networking fundamentals
-- Community technology volunteers
-- Instructors running collaborative technical workshops
-- Teams that want a shared practice project with multiple roles
+In this training project, you will build a simple version of that kind of system.
 
-## Repository layout
+You will work on things like:
 
-```text
-sphf-wifi-portal-training/
-├── README.md
-├── CONTRIBUTING.md
-├── .gitignore
-├── docs/
-├── tracks/
-│   ├── development/
-│   ├── data/
-│   ├── cybersecurity/
-│   └── networking/
-├── examples/
-└── tasks/
-```
+- a login page
+- a status page
+- a logout page
+- an error page
+- a redirect page
+- sample data
+- security and networking ideas around the portal
 
-## Learning tracks
+## Why are we doing it this way?
+
+The original SPHF Wi‑Fi portal project is bigger and more advanced.
+
+This training repo keeps things simple so that attendees can:
+
+- understand the core idea
+- build something real in small steps
+- work in teams
+- learn how developers, security people, data people, and networking people all think about the same system
+
+## What you are building
+
+By the end of the training, you should have a simple portal prototype that shows how a community Wi‑Fi access flow could work.
+
+That includes:
+
+- a user landing on the portal
+- filling in a basic form
+- moving through a simple connection flow
+- seeing status or error messages
+- understanding what happens in the background
+
+## How the repo is organised
+
+### Shared docs
+The `docs/` folder explains the project, the system flow, and the roadmap.
 
 ### Development track
-Learn the captive portal user journey by editing the training portal pages in `tracks/development/portal/`.
+The `tracks/development/` folder is where you work on the portal pages.
 
 ### Data track
-Practice designing lightweight schemas and using safe demonstration data in `tracks/data/`.
+The `tracks/data/` folder helps you think about what data the portal needs and how to use fake sample data safely.
 
 ### Cybersecurity track
-Review risks and controls for forms, sessions, user data, and device/network interactions in `tracks/cybersecurity/`.
+The `tracks/cybersecurity/` folder helps you look at risks, input handling, and safer design choices.
 
 ### Networking track
-Study how a captive portal system fits into a segmented network using the materials in `tracks/networking/`.
+The `tracks/networking/` folder helps you understand how the portal fits into the Wi‑Fi and access flow.
 
-## Start here
+## Where to start
 
-1. Read `docs/overview.md`
-2. Review `docs/learning-paths.md`
-3. Choose a learning track in `tracks/`
-4. Pick a task level from `tasks/`
+If this is your first time, start here:
 
-## Training principles
+1. Read `docs/project-goal.md`
+2. Read `docs/system-flow.md`
+3. Read `docs/build-roadmap.md`
+4. Open your track folder
+5. Start with one beginner task
 
-- Keep examples simple and explainable
-- Use only clearly fake data for demos
-- Prefer accessibility and security by default
-- Treat this repo as a lab, not a production-ready deployment
+## Important note
 
-## Suggested workshop flow
+This is a training repo.
 
-- Begin with the system overview and architecture docs
-- Split learners into track-based groups
-- Rejoin to compare how each discipline sees the same system
-- Finish with a team project from `tasks/team-projects.md`
+Please use **fake data only**.
 
-## Note on realism
+Do not add:
+- real names
+- real phone numbers
+- real credentials
+- real user records
+- real production network details
 
-This project uses simplified training artifacts so learners can focus on concepts. Real captive portal deployments require additional operational, legal, infrastructure, and security planning.
+Check `docs/fake-data-policy.md` before adding any sample data.
+
+## What success looks like
+
+A good result for this training is not a perfect production system.
+
+A good result is:
+- understanding the problem
+- building a working simplified version
+- explaining your decisions
+- improving the system as a team
+
+## Final note
+
+This project is meant to help you learn by building.
+
+Take it step by step, ask questions, and focus on understanding how the whole portal system fits together.
