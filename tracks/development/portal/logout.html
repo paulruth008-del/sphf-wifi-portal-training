@@ -3,16 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logout</title>
+  <meta name="theme-color" content="#123f3b">
+  <title>Session ended | Common Ground Wi-Fi</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <main class="container">
-    <section class="card">
-      <h1>You have been logged out</h1>
-      <p>This page represents the end of a demo captive portal session.</p>
-      <p><a class="button-link" href="login.html">Return to login</a></p>
+  <main class="portal-layout state-layout">
+    <aside class="welcome-panel state-panel" aria-label="Network information">
+      <a class="wordmark" href="login.html" aria-label="Common Ground Wi-Fi home">
+        <span class="wordmark-mark" aria-hidden="true">cg</span>
+        <span>common ground<span class="wordmark-sub">COMMUNITY NETWORK</span></span>
+      </a>
+      <div class="welcome-copy">
+        <p class="eyebrow">Community access</p>
+        <h1>Good to have<br>you around.</h1>
+        <p>Thanks for taking part in the training demo.</p>
+      </div>
+      <div class="network-status"><span class="status-dot" aria-hidden="true"></span>Network available <span class="status-divider">/</span> Training demo</div>
+      <p class="panel-footnote">A fictional portal for the SPHF Wi-Fi training lab.</p>
+    </aside>
+
+    <section class="form-panel" aria-labelledby="logout-title">
+      <div class="form-wrap state-content">
+        <div class="ended-mark" aria-hidden="true">&#10003;</div>
+        <p class="eyebrow form-eyebrow">Session ended</p>
+        <h2 id="logout-title">You're all signed out.</h2>
+        <p class="form-intro">Your local demo session has been cleared from this browser.</p>
+        <a class="connect-button button-link" href="login.html">Back to sign in <span aria-hidden="true">&#8594;</span></a>
+      </div>
+      <footer class="page-footer">This was a simulated connection. No network access was changed.</footer>
     </section>
   </main>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

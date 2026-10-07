@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Community Registration</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      background:
+        linear-gradient(135deg, #5b0f1b, #7f1d2d, #f8f5f2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 15px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 500px;
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .header {
+      background: #6b1020;
+      color: white;
+      text-align: center;
+      padding: 35px 25px;
+    }
+
+    .header h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 15px;
+      color: #f8dfe3;
+    }
+
+    .form-container {
+      padding: 35px;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      color: #4a0b16;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #d6b8bd;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+      transition: 0.3s;
+      background: #fffdfd;
+    }
+
+    input[type="text"]:focus {
+      border-color: #7f1d2d;
+      box-shadow: 0 0 0 3px rgba(127, 29, 45, 0.12);
+    }
+
+    
+    .terms {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #faf1f3;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+
+    .terms input {
+      margin-top: 3px;
+      width: 17px;
+      height: 17px;
+      accent-color: #7f1d2d;
+      cursor: pointer;
+    }
+
+    .terms label {
+      margin: 0;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.5;
+      color: #4a0b16;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #7f1d2d;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #5b0f1b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(91, 15, 27, 0.25);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    
+    .footer {
+      background: #f8f5f2;
+      text-align: center;
+      padding: 18px;
+      color: #79545c;
+      font-size: 13px;
+      border-top: 1px solid #eee;
+    }
+
+    
+    #message {
+      display: none;
+      margin-top: 20px;
+      padding: 13px;
+      background: #ecfdf5;
+      color: #166534;
+      border-left: 4px solid #16a34a;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+
+      .header {
+        padding: 28px 20px;
+      }
+
+      .header h1 {
+        font-size: 25px;
+      }
+
+      .form-container {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    
+    <header class="header">
+      <h1>Community Registration</h1>
+      <p>Register your community details and device</p>
+    </header>
+
+    
+    <main class="form-container">
+
+      <form id="registrationForm">
+
+        
+        <div class="form-group">
+          <label for="community_id">Member ID</label>
+          <input
+            type="text"
+            id="community_id"
+            name="community_id"
+            placeholder="Enter your Member ID"
+            required
+          >
+        </div>
+
+        
+        <div class="form-group">
+          <label for="device_name">Device Name</label>
+          <input
+            type="text"
+            id="device_name"
+            name="device_name"
+            placeholder="Enter device name"
+            required
+          >
+        </div>
+
+        
+        <div class="terms">
+          <input
+            type="checkbox"
+            id="accept_terms"
+            name="accept_terms"
+            required
+          >
+
+          <label for="accept_terms">
+            I accept the terms and conditions and confirm that
+            the information provided is correct.
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">
+          Submit Registration
+        </button>
+
+        <!-- Success Message -->
+        <div id="message">
+          Registration submitted successfully!
+        </div>
+
+      </form>
+
+    </main>
+
+    
+    <footer class="footer">
+      Community Registration Portal &copy; 2026
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const communityId = document.getElementById("community_id").value;
+      const deviceName = document.getElementById("device_name").value;
+      const accepted = document.getElementById("accept_terms").checked;
+
+      if (communityId && deviceName && accepted) {
+        document.getElementById("message").style.display = "block";
+
+        console.log("Community ID:", memberId);
+        console.log("Device Name:", deviceName);
+        console.log("Accepted Terms:", accepted);
+
+        this.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>

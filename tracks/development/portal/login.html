@@ -3,31 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Community Wi‑Fi Login</title>
+  <meta name="theme-color" content="#123f3b">
+  <title>Connect | Common Ground Wi-Fi</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <main class="container">
-    <section class="card">
-      <h1>Community Wi‑Fi Login</h1>
-      <p>Welcome to the training portal. This page demonstrates a simplified captive portal login flow.</p>
-      <form id="login-form" action="#" method="post" novalidate>
-        <label for="member-id">Member ID</label>
-        <input id="member-id" name="member_id" type="text" placeholder="Enter demo member ID" required>
+  <main class="portal-layout">
+    <aside class="welcome-panel" aria-label="Network information">
+      <a class="wordmark" href="login.html" aria-label="Common Ground Wi-Fi home">
+        <span class="wordmark-mark" aria-hidden="true">cg</span>
+        <span>common ground<span class="wordmark-sub">COMMUNITY NETWORK</span></span>
+      </a>
+      <div class="welcome-copy">
+        <p class="eyebrow">A little more connected</p>
+        <h1>Good Wi-Fi.<br>Good neighbors.</h1>
+        <p>Sign in to the community network and get back to what matters.</p>
+      </div>
+      <div class="network-status"><span class="status-dot" aria-hidden="true"></span>Network available <span class="status-divider">/</span> Training demo</div>
+      <p class="panel-footnote">A fictional portal for the SPHF Wi-Fi training lab.</p>
+    </aside>
 
-        <label for="device-name">Device name</label>
-        <input id="device-name" name="device_name" type="text" placeholder="Phone, tablet, or laptop" required>
+    <section class="form-panel" aria-labelledby="form-title">
+      <div class="form-wrap">
+        <p class="eyebrow form-eyebrow">Community access</p>
+        <h2 id="form-title">Welcome in.</h2>
+        <p class="form-intro">Enter your demo details to simulate connecting.</p>
+        <form id="login-form" action="status.html" method="get">
+          <label for="member-id">Demo member ID</label>
+          <input id="member-id" name="member_id" type="text" placeholder="For example, DEMO-1042" autocomplete="off" required>
 
-        <label class="checkbox-row" for="accept-terms">
-          <input id="accept-terms" name="accept_terms" type="checkbox" required>
-          <span>I agree to the demo network terms for this training lab.</span>
-        </label>
+          <label for="device-name">Name this device</label>
+          <input id="device-name" name="device_name" type="text" placeholder="For example, Library laptop" autocomplete="off" maxlength="40" required>
 
-        <div id="form-message" class="message" aria-live="polite"></div>
+          <label class="checkbox-row" for="accept-terms">
+            <input id="accept-terms" name="accept_terms" type="checkbox" required>
+            <span>I agree to the <a href="#demo-terms">demo network terms</a>.</span>
+          </label>
 
-        <button type="submit">Connect</button>
-      </form>
-      <p class="note">Use fake values only. This is a training environment.</p>
+          <p id="form-message" class="message" aria-live="polite"></p>
+          <button class="connect-button" type="submit">Connect to Wi-Fi <span aria-hidden="true">&#8594;</span></button>
+        </form>
+        <p class="privacy-note"><span aria-hidden="true">i</span> Training only. Use fake values; nothing is sent to a server.</p>
+      </div>
+      <footer class="page-footer" id="demo-terms">By connecting, you agree to use this simulated network responsibly.</footer>
     </section>
   </main>
   <script src="assets/js/main.js"></script>

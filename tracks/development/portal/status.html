@@ -3,21 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connection Status</title>
+  <meta name="theme-color" content="#123f3b">
+  <title>You're connected | Common Ground Wi-Fi</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <main class="container">
-    <section class="card">
-      <h1>Connection Status</h1>
-      <p>Your device has completed the training login flow.</p>
-      <ul>
-        <li>Session state: <strong>Demo active</strong></li>
-        <li>Assigned group: <strong>Training VLAN placeholder</strong></li>
-        <li>Support contact: <strong>Facilitator or instructor</strong></li>
-      </ul>
-      <p><a class="button-link" href="logout.html">Simulate logout</a></p>
+  <main class="portal-layout state-layout">
+    <aside class="welcome-panel state-panel" aria-label="Network information">
+      <a class="wordmark" href="login.html" aria-label="Common Ground Wi-Fi home">
+        <span class="wordmark-mark" aria-hidden="true">cg</span>
+        <span>common ground<span class="wordmark-sub">COMMUNITY NETWORK</span></span>
+      </a>
+      <div class="welcome-copy">
+        <p class="eyebrow">Community access</p>
+        <h1>Stay close<br>to your people.</h1>
+        <p>A shared connection for the whole neighborhood.</p>
+      </div>
+      <div class="network-status"><span class="status-dot" aria-hidden="true"></span>Network available <span class="status-divider">/</span> Training demo</div>
+      <p class="panel-footnote">A fictional portal for the SPHF Wi-Fi training lab.</p>
+    </aside>
+
+    <section class="form-panel" aria-labelledby="status-title">
+      <div class="form-wrap state-content">
+        <div class="connected-mark" aria-hidden="true"><span></span></div>
+        <p class="eyebrow form-eyebrow">Session active</p>
+        <h2 id="status-title">You're connected.</h2>
+        <p class="form-intro">Your training session is ready. No real network access was granted.</p>
+        <dl class="session-details">
+          <div><dt>Device</dt><dd id="session-device">Demo device</dd></div>
+          <div><dt>Access group</dt><dd>Training network</dd></div>
+          <div><dt>Session</dt><dd><span class="inline-status"><span class="status-dot" aria-hidden="true"></span>Active demo</span></dd></div>
+        </dl>
+        <a class="connect-button button-link" href="logout.html">End demo session <span aria-hidden="true">&#8594;</span></a>
+        <p class="privacy-note">Session details stay in this browser only.</p>
+      </div>
+      <footer class="page-footer">Need help? Ask your training facilitator.</footer>
     </section>
   </main>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
