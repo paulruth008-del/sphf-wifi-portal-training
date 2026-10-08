@@ -3,17 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirect Placeholder</title>
+  <title>Redirecting</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/portal.css">
 </head>
 <body>
   <main class="container">
-    <section class="card">
-      <h1>Redirecting…</h1>
-      <p>This page demonstrates where a captive portal might redirect a user after a successful login or acknowledgement.</p>
-      <p>Placeholder destination: <code>https://example.invalid/welcome</code></p>
+    <section class="card" aria-live="polite">
+      <h1>Access granted</h1>
+      <p class="note">Your login was successful and you are being redirected to the portal.</p>
+      <p id="redirect-status" role="status" aria-live="polite">Redirecting in <span id="countdown">4</span> seconds…</p>
+      <p>Destination: <code id="destination">status.html</code></p>
       <p><a class="button-link" href="status.html">Continue to status</a></p>
     </section>
   </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const allowedTargets = ["status.html", "index.html"];
+    const requestedTarget = params.get("next") || "status.html";
+    const destination = allowedTargets.includes(requestedTarget) ? requestedTarget : "status.html";
+
+    const link = document.querySelector(".button-link");
+    const countdown = document.getElementById("countdown");
+    const destinationNode = document.getElementById("destination");
+
+    link.href = destination;
+    destinationNode.textContent = destination;
+
+    let remainingSeconds = 4;
+    const redirectTimer = window.setInterval(() => {
+      remainingSeconds -= 1;
+      countdown.textContent = remainingSeconds;
+
+      if (remainingSeconds <= 0) {
+        window.clearInterval(redirectTimer);
+        window.location.replace(destination);
+      }
+    }, 1000);
+
+    window.setTimeout(() => {
+      window.location.replace(destination);
+    }, 4000);
+  </script>
 </body>
 </html>

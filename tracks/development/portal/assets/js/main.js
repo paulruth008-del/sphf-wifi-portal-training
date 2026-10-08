@@ -17,7 +17,7 @@ if (form) {
 
     try {
       localStorage.setItem(sessionKey, JSON.stringify({ deviceName }));
-      window.location.assign('status.html');
+      window.location.assign('redirect.html');
     } catch {
       message.textContent = 'Your browser could not save this demo session. Check that local storage is available.';
     }
